@@ -9,3 +9,11 @@ queue_rules:
     merge_conditions:
       - check-success = vm6-freeze-ci
     checks_timeout: null
+merge_protections:
+  - name: VM6 Freeze Enforcement Baseline
+    if: []
+    success_conditions:
+      - base = main
+merge_protections_settings:
+  reporting_method: check-runs
+  post_comment: true
