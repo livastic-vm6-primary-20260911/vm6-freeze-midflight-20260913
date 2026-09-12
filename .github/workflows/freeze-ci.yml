@@ -1,4 +1,4 @@
-name: VM6 Freeze CI
+name: VM6 Auto Merge Revocation CI
 
 on:
   pull_request:
@@ -7,11 +7,11 @@ permissions:
   contents: read
 
 jobs:
-  vm6-freeze-ci:
+  vm6-auto-merge-ci:
     runs-on: ubuntu-latest
     steps:
-      - name: Hold long enough to apply freeze
+      - name: Hold long enough to revoke auto-merge label
         run: |
-          echo "VM6_FREEZE_CI_STARTED=$(date -u +%FT%TZ)"
+          echo "VM6_AUTO_MERGE_CI_STARTED=$(date -u +%FT%TZ)"
           sleep 180
-          echo "VM6_FREEZE_CI_FINISHED=$(date -u +%FT%TZ)"
+          echo "VM6_AUTO_MERGE_CI_FINISHED=$(date -u +%FT%TZ)"
