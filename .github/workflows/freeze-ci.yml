@@ -13,6 +13,5 @@ jobs:
       - name: Hold long enough to apply freeze
         run: |
           echo "VM6_FREEZE_CI_STARTED=$(date -u +%FT%TZ)"
-          sleep 35
+          sleep 180
           echo "VM6_FREEZE_CI_FINISHED=$(date -u +%FT%TZ)"
-
