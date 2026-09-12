@@ -1,19 +1,11 @@
 pull_request_rules: []
-commands_restrictions:
-  queue:
-    conditions:
-      - sender-permission >= write
-queue_rules:
-  - name: default
-    queue_conditions: []
-    merge_conditions:
-      - check-success = vm6-freeze-ci
-    checks_timeout: null
 merge_protections:
-  - name: VM6 Freeze Enforcement Baseline
+  - name: VM6 Long Running Protection
     if: []
     success_conditions:
-      - base = main
+      - check-success = vm6-auto-merge-ci
 merge_protections_settings:
   reporting_method: check-runs
   post_comment: true
+  auto_merge_conditions:
+    - label = vm6-auto-authorized
