@@ -1,0 +1,2 @@
+# Deliberately lower-precedence decoy: no rule for sensitive.txt
+/other.txt @livastic-vm6-primary-rn260917
